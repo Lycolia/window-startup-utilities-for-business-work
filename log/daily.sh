@@ -88,3 +88,7 @@ createLog $weeklyPath 週 $weeklyTitle createSummeryFile
 dailyPath=${weeklyPath}${day}/
 dailyTitle=${year}年${monthText}月${dayText}日のログ
 createLog $dailyPath 日 $dailyTitle createDailyFile
+
+# コミット
+git add .
+git commit -m 'daily commit'
