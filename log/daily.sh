@@ -81,7 +81,7 @@ createLog $monthlyPath 月 $monthlyTitle createSummeryFile
 
 # 週次
 weeklyPath=${monthlyPath}w${week}/
-weeklyTitle=${year}年${monthText}月${week}週のまとめ
+weeklyTitle=${year}年${monthText}月${week}週目のまとめ
 createLog $weeklyPath 週 $weeklyTitle createSummeryFile
 
 # 日次
