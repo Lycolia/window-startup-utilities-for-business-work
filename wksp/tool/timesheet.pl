@@ -37,7 +37,7 @@ use strict;
 use warnings;
 use utf8;
 use open qw(:std :encoding(UTF-8));
-use Encoding;
+use Encode;
 use FindBin qw($Bin);
 use POSIX qw(strftime mktime);
 use Time::Piece;
