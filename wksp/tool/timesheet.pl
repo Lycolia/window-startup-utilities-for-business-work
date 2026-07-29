@@ -71,7 +71,7 @@ for my $name (@order) {
 }
 
 sub create_dir_path {
-    my $base_path = "${Bin}/log";
+    my $base_path = "./log";
     my $t = localtime;
     my $year = shift // $t->year;
     my $month = shift // $t->mon;
