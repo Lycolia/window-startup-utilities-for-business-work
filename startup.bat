@@ -1,16 +1,13 @@
-rem OSのスタートアップ時に各種処理を行うやつ
-
 @echo off
 
-rem Dockerとかのサービスを上げる用
-call start-wsl-services.bat
-
-rem Ubuntuのkeychainを起動時に打ち込んでおくため
-rem （VSCode起動時に多窓でターミナルが上がるとkeychainが壊れて面倒なため、このタイミングでやっておく）
 start ubuntu
 
-rem 日報作成用
-call "C:/env/msys64/run_zsh.cmd" "/C/path/to/daily.sh"
+rem 早く上がりすぎると権限変更で負ける？ので待機
+timeout 5
+start powershell -NoProfile -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File \"%~dp0set-default-edge.ps1\"' -Verb RunAs"
 
-rem エラーメッセージとかの確認用
+echo "何かキーを押すとログフォルダを作成し、VSCodeとEdgeを起動します。"
+wsl /home/hoge/wksp/daily.sh
 pause
+start code
+start "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --profile-directory=Default
