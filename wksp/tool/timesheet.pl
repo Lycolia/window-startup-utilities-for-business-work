@@ -37,7 +37,7 @@ use strict;
 use warnings;
 use utf8;
 use open qw(:std :encoding(UTF-8));
-use Encoding;
+use Encode;
 use FindBin qw($Bin);
 use POSIX qw(strftime mktime);
 use Time::Piece;
@@ -71,7 +71,7 @@ for my $name (@order) {
 }
 
 sub create_dir_path {
-    my $base_path = "${Bin}/log";
+    my $base_path = "./log";
     my $t = localtime;
     my $year = shift // $t->year;
     my $month = shift // $t->mon;

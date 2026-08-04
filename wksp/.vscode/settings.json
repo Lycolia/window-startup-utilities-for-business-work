@@ -1,5 +1,8 @@
 {
-    "prettier.prettierPath": "node_modules/.bin/prettier",
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "git.suggestSmartCommit": false,
+    "git.autofetch": true,
     "[markdown]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
