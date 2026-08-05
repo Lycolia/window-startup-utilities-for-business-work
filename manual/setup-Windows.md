@@ -82,6 +82,11 @@ OneDriveをアンインストールする。
 13. 登録されている拡張子は表示しない off
 14. 同期プロバイダーの通知を表示する off
 15. shell:startupを開きstartup.batのショートカットを作る
+16. .ps1ファイルを使えるようにするために、Powershellを管理者権限で開き以下を流す
+
+    ```powershell
+    Set-ExecutionPolicy RemoteSigned
+    ```
 
 # Windows側アプリケーションの導入
 
@@ -287,46 +292,46 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
         "update.mode": "manual",
         "files.associations": {
           "*.bats": "shellscript"
-        },
+        }
       }
       ```
    2. keybindings.json
       ```json
       [
-          {
-              "key": "ctrl+shift+r",
-              "command": "typescript.restartTsServer"
+        {
+          "key": "ctrl+shift+r",
+          "command": "typescript.restartTsServer"
+        },
+        {
+          "key": "ctrl+shift+e",
+          "command": "eslint.restart"
+        },
+        {
+          "key": "alt+down",
+          "command": "workbench.action.compareEditor.nextChange",
+          "when": "textCompareEditorVisible"
+        },
+        {
+          "key": "alt+up",
+          "command": "workbench.action.compareEditor.previousChange",
+          "when": "textCompareEditorVisible"
+        },
+        {
+          "key": "ctrl+k enter",
+          "command": "-workbench.action.keepEditor"
+        },
+        {
+          "key": "ctrl+q",
+          "command": "workbench.action.keepEditor"
+        },
+        {
+          "key": "shift+enter",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\u001b\r"
           },
-          {
-              "key": "ctrl+shift+e",
-              "command": "eslint.restart"
-          },
-          {
-              "key": "alt+down",
-              "command": "workbench.action.compareEditor.nextChange",
-              "when": "textCompareEditorVisible"
-          },
-          {
-              "key": "alt+up",
-              "command": "workbench.action.compareEditor.previousChange",
-              "when": "textCompareEditorVisible"
-          },
-          {
-              "key": "ctrl+k enter",
-              "command": "-workbench.action.keepEditor"
-          },
-          {
-              "key": "ctrl+q",
-              "command": "workbench.action.keepEditor"
-          },
-          {
-              "key": "shift+enter",
-              "command": "workbench.action.terminal.sendSequence",
-              "args": {
-                  "text": "\u001b\r"
-              },
-              "when": "terminalFocus"
-          }
+          "when": "terminalFocus"
+        }
       ]
       ```
 
@@ -334,182 +339,172 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ```json
 {
-    "$help": "https://aka.ms/terminal-documentation",
-    "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
-    [
-        {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
-            "command":
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "id": "User.splitPane.A6751878"
-        },
-        {
-            "command": "paste",
-            "id": "User.paste"
-        },
-        {
-            "command":
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "id": "User.copy.644BA8F2"
-        }
-    ],
-    "copyFormatting": "none",
-    "copyOnSelect": false,
-    "defaultProfile": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
-    "keybindings":
-    [
-        {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "id": "User.paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
-        },
-        {
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
-        }
-    ],
-    "newTabMenu":
-    [
-        {
-            "type": "remainingProfiles"
-        }
-    ],
-    "profiles":
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [
     {
-        "defaults": {},
-        "list":
-        [
-            {
-                "colorScheme": "VSCode",
-                "commandline": "C:/env/msys64/msys2_shell.cmd -msys -defterm -here -use-full-path -no-start -shell zsh",
-                "font":
-                {
-                    "face": "Consolas",
-                    "size": 11
-                },
-                "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
-                "icon": "C:/env/msys64/mingw64.ico",
-                "name": "MINGW64 / MSYS2"
-            },
-            {
-                "commandline": "C:/Program Files/PowerShell/7/pwsh.exe",
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44b0}",
-                "icon": "C:/Program Files/PowerShell/7/pwsh.exe",
-                "name": "Windows PowerShell"
-            },
-            {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "\u30b3\u30de\u30f3\u30c9 \u30d7\u30ed\u30f3\u30d7\u30c8"
-            },
-            {
-                "colorScheme": "Ubuntu-ColorScheme",
-                "commandline": "ubuntu.exe",
-                "cursorShape": "filledBox",
-                "font":
-                {
-                    "face": "Cascadia Mono",
-                    "size": 13
-                },
-                "guid": "{60b7923e-41aa-455c-bd33-03e5ccf277f9}",
-                "hidden": false,
-                "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
-                "name": "Ubuntu",
-                "tabTitle": "Ubuntu"
-            }
-        ]
+      "command": "find",
+      "id": "User.find"
     },
-    "schemes":
-    [
-        {
-            "background": "#300A24",
-            "black": "#171421",
-            "blue": "#0037DA",
-            "brightBlack": "#767676",
-            "brightBlue": "#08458F",
-            "brightCyan": "#2C9FB3",
-            "brightGreen": "#26A269",
-            "brightPurple": "#A347BA",
-            "brightRed": "#C01C28",
-            "brightWhite": "#F2F2F2",
-            "brightYellow": "#A2734C",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#3A96DD",
-            "foreground": "#FFFFFF",
-            "green": "#26A269",
-            "name": "Ubuntu-20.04-ColorScheme",
-            "purple": "#881798",
-            "red": "#C21A23",
-            "selectionBackground": "#FFFFFF",
-            "white": "#CCCCCC",
-            "yellow": "#A2734C"
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "id": "User.splitPane.A6751878"
+    },
+    {
+      "command": "paste",
+      "id": "User.paste"
+    },
+    {
+      "command": {
+        "action": "copy",
+        "singleLine": false
+      },
+      "id": "User.copy.644BA8F2"
+    }
+  ],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+  "keybindings": [
+    {
+      "id": "User.find",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "id": "User.paste",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "User.splitPane.A6751878",
+      "keys": "alt+shift+d"
+    },
+    {
+      "id": "User.copy.644BA8F2",
+      "keys": "ctrl+c"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {},
+    "list": [
+      {
+        "colorScheme": "VSCode",
+        "commandline": "C:/env/msys64/msys2_shell.cmd -msys -defterm -here -use-full-path -no-start -shell zsh",
+        "font": {
+          "face": "Consolas",
+          "size": 11
         },
-        {
-            "background": "#300A24",
-            "black": "#171421",
-            "blue": "#0037DA",
-            "brightBlack": "#767676",
-            "brightBlue": "#08458F",
-            "brightCyan": "#2C9FB3",
-            "brightGreen": "#26A269",
-            "brightPurple": "#A347BA",
-            "brightRed": "#C01C28",
-            "brightWhite": "#F2F2F2",
-            "brightYellow": "#A2734C",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#3A96DD",
-            "foreground": "#FFFFFF",
-            "green": "#26A269",
-            "name": "Ubuntu-22.04-ColorScheme",
-            "purple": "#881798",
-            "red": "#C21A23",
-            "selectionBackground": "#FFFFFF",
-            "white": "#CCCCCC",
-            "yellow": "#A2734C"
+        "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+        "icon": "C:/env/msys64/mingw64.ico",
+        "name": "MINGW64 / MSYS2"
+      },
+      {
+        "commandline": "C:/Program Files/PowerShell/7/pwsh.exe",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44b0}",
+        "icon": "C:/Program Files/PowerShell/7/pwsh.exe",
+        "name": "Windows PowerShell"
+      },
+      {
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "\u30b3\u30de\u30f3\u30c9 \u30d7\u30ed\u30f3\u30d7\u30c8"
+      },
+      {
+        "colorScheme": "Ubuntu-ColorScheme",
+        "commandline": "ubuntu.exe",
+        "cursorShape": "filledBox",
+        "font": {
+          "face": "Cascadia Mono",
+          "size": 13
         },
-        {
-            "background": "#1E1E1E",
-            "black": "#000000",
-            "blue": "#2472C8",
-            "brightBlack": "#666666",
-            "brightBlue": "#3B8EEA",
-            "brightCyan": "#29B8DB",
-            "brightGreen": "#23D18B",
-            "brightPurple": "#D670D6",
-            "brightRed": "#F14C4C",
-            "brightWhite": "#E5E5E5",
-            "brightYellow": "#F5F543",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#11A8CD",
-            "foreground": "#D4D4D4",
-            "green": "#0DBC79",
-            "name": "VSCode",
-            "purple": "#BC3FBC",
-            "red": "#CD3131",
-            "selectionBackground": "#FFFFFF",
-            "white": "#E5E5E5",
-            "yellow": "#E5E510"
-        }
-    ],
-    "themes": []
+        "guid": "{60b7923e-41aa-455c-bd33-03e5ccf277f9}",
+        "hidden": false,
+        "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
+        "name": "Ubuntu",
+        "tabTitle": "Ubuntu"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#300A24",
+      "black": "#171421",
+      "blue": "#0037DA",
+      "brightBlack": "#767676",
+      "brightBlue": "#08458F",
+      "brightCyan": "#2C9FB3",
+      "brightGreen": "#26A269",
+      "brightPurple": "#A347BA",
+      "brightRed": "#C01C28",
+      "brightWhite": "#F2F2F2",
+      "brightYellow": "#A2734C",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#3A96DD",
+      "foreground": "#FFFFFF",
+      "green": "#26A269",
+      "name": "Ubuntu-20.04-ColorScheme",
+      "purple": "#881798",
+      "red": "#C21A23",
+      "selectionBackground": "#FFFFFF",
+      "white": "#CCCCCC",
+      "yellow": "#A2734C"
+    },
+    {
+      "background": "#300A24",
+      "black": "#171421",
+      "blue": "#0037DA",
+      "brightBlack": "#767676",
+      "brightBlue": "#08458F",
+      "brightCyan": "#2C9FB3",
+      "brightGreen": "#26A269",
+      "brightPurple": "#A347BA",
+      "brightRed": "#C01C28",
+      "brightWhite": "#F2F2F2",
+      "brightYellow": "#A2734C",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#3A96DD",
+      "foreground": "#FFFFFF",
+      "green": "#26A269",
+      "name": "Ubuntu-22.04-ColorScheme",
+      "purple": "#881798",
+      "red": "#C21A23",
+      "selectionBackground": "#FFFFFF",
+      "white": "#CCCCCC",
+      "yellow": "#A2734C"
+    },
+    {
+      "background": "#1E1E1E",
+      "black": "#000000",
+      "blue": "#2472C8",
+      "brightBlack": "#666666",
+      "brightBlue": "#3B8EEA",
+      "brightCyan": "#29B8DB",
+      "brightGreen": "#23D18B",
+      "brightPurple": "#D670D6",
+      "brightRed": "#F14C4C",
+      "brightWhite": "#E5E5E5",
+      "brightYellow": "#F5F543",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#11A8CD",
+      "foreground": "#D4D4D4",
+      "green": "#0DBC79",
+      "name": "VSCode",
+      "purple": "#BC3FBC",
+      "red": "#CD3131",
+      "selectionBackground": "#FFFFFF",
+      "white": "#E5E5E5",
+      "yellow": "#E5E510"
+    }
+  ],
+  "themes": []
 }
 ```
 
