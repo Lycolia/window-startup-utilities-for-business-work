@@ -300,11 +300,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
       [
         {
           "key": "ctrl+shift+r",
-          "command": "typescript.restartTsServer"
-        },
-        {
-          "key": "ctrl+shift+e",
-          "command": "eslint.restart"
+          "command": "workbench.action.reloadWindow"
         },
         {
           "key": "alt+down",
