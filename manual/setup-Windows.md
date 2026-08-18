@@ -401,7 +401,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
         },
         "guid": "{60b7923e-41aa-455c-bd33-03e5ccf277f9}",
         "hidden": false,
-        "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
+        "icon": "C:/env/documents/ubuntu.png",
         "name": "Ubuntu",
         "tabTitle": "Ubuntu"
       },
