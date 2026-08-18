@@ -8,14 +8,17 @@ Windows起動後の定型処理、WSL上での日報ファイル作成、既定�
 
 ```
 .
-├── batches/                 # Windowsの各種自動化スクリプト
-│   ├── startup.bat          # Windowsのstartupに放り込むやつ
-│   ├── startup-wsl.sh       # starup.batから呼ぶWSLの起動処理
-│   ├── set-default-edge.ps1 # Edgeを既定アプリに設定（起動時にChromeに変更されるようなシーンで上書き）
-│   ├── SFTA.ps1             # set-default-edge.ps1の依存（標準ブラウザ強制変更スクリプト）
-│   ├── rec.ps1              # 会議録音とかをする奴 → https://blog.lycolia.info/0518
-│   ├── toast.ps1            # コマンドラインからWindowsのトースト通知を出す奴
-│   └── MonitorPowerOff.ps1  # モニターの電源を切る奴
+├── env/                         # Windowsの環境関連ファイル
+│   ├── batches/                 # Windowsの各種自動化スクリプト
+│   │   ├── startup.bat          # Windowsのstartupに放り込むやつ
+│   │   ├── startup-wsl.sh       # starup.batから呼ぶWSLの起動処理
+│   │   ├── set-default-edge.ps1 # Edgeを既定アプリに設定（起動時にChromeに変更されるようなシーンで上書き）
+│   │   ├── SFTA.ps1             # set-default-edge.ps1の依存（標準ブラウザ強制変更スクリプト）
+│   │   ├── rec.ps1              # 会議録音とかをする奴 → https://blog.lycolia.info/0518
+│   │   ├── toast.ps1            # コマンドラインからWindowsのトースト通知を出す奴
+│   │   └── MonitorPowerOff.ps1  # モニターの電源を切る奴
+│   └── documents/
+│       └──ubuntu.png            # Windows Terminal用のアイコン
 ├── manual/
 │   ├── setup-Windows.md     # Windowsのセットアップ手順
 │   └── setup-WSL.md         # WSL / Ubuntuのセットアップ手順
@@ -53,5 +56,5 @@ Windows起動後の定型処理、WSL上での日報ファイル作成、既定�
 
 ## 注意事項
 
-- PowerShellスクリプトの一部は管理者権限を必要とする。
+- PowerShellスクリプトの一部は管理者権限を必要とする。cod
 - 本リポジトリは個人環境向けです。別環境での動作は保証しません。
