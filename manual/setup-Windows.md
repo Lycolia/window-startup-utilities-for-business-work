@@ -393,14 +393,17 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
     "list": [
       {
         "colorScheme": "VSCode",
-        "commandline": "C:/env/msys64/msys2_shell.cmd -msys -defterm -here -use-full-path -no-start -shell zsh",
+        "commandline": "ubuntu.exe",
+        "cursorShape": "filledBox",
         "font": {
           "face": "Consolas",
           "size": 11
         },
-        "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
-        "icon": "C:/env/msys64/mingw64.ico",
-        "name": "MINGW64 / MSYS2"
+        "guid": "{60b7923e-41aa-455c-bd33-03e5ccf277f9}",
+        "hidden": false,
+        "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
+        "name": "Ubuntu",
+        "tabTitle": "Ubuntu"
       },
       {
         "commandline": "C:/Program Files/PowerShell/7/pwsh.exe",
@@ -414,68 +417,19 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
         "name": "\u30b3\u30de\u30f3\u30c9 \u30d7\u30ed\u30f3\u30d7\u30c8"
       },
       {
-        "colorScheme": "Ubuntu-ColorScheme",
-        "commandline": "ubuntu.exe",
-        "cursorShape": "filledBox",
+        "colorScheme": "VSCode",
+        "commandline": "C:/env/msys64/msys2_shell.cmd -msys -defterm -here -use-full-path -no-start -shell zsh",
         "font": {
-          "face": "Cascadia Mono",
-          "size": 13
+          "face": "Consolas",
+          "size": 11
         },
-        "guid": "{60b7923e-41aa-455c-bd33-03e5ccf277f9}",
-        "hidden": false,
-        "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
-        "name": "Ubuntu",
-        "tabTitle": "Ubuntu"
+        "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+        "icon": "C:/env/msys64/mingw64.ico",
+        "name": "MINGW64 / MSYS2"
       }
     ]
   },
   "schemes": [
-    {
-      "background": "#300A24",
-      "black": "#171421",
-      "blue": "#0037DA",
-      "brightBlack": "#767676",
-      "brightBlue": "#08458F",
-      "brightCyan": "#2C9FB3",
-      "brightGreen": "#26A269",
-      "brightPurple": "#A347BA",
-      "brightRed": "#C01C28",
-      "brightWhite": "#F2F2F2",
-      "brightYellow": "#A2734C",
-      "cursorColor": "#FFFFFF",
-      "cyan": "#3A96DD",
-      "foreground": "#FFFFFF",
-      "green": "#26A269",
-      "name": "Ubuntu-20.04-ColorScheme",
-      "purple": "#881798",
-      "red": "#C21A23",
-      "selectionBackground": "#FFFFFF",
-      "white": "#CCCCCC",
-      "yellow": "#A2734C"
-    },
-    {
-      "background": "#300A24",
-      "black": "#171421",
-      "blue": "#0037DA",
-      "brightBlack": "#767676",
-      "brightBlue": "#08458F",
-      "brightCyan": "#2C9FB3",
-      "brightGreen": "#26A269",
-      "brightPurple": "#A347BA",
-      "brightRed": "#C01C28",
-      "brightWhite": "#F2F2F2",
-      "brightYellow": "#A2734C",
-      "cursorColor": "#FFFFFF",
-      "cyan": "#3A96DD",
-      "foreground": "#FFFFFF",
-      "green": "#26A269",
-      "name": "Ubuntu-22.04-ColorScheme",
-      "purple": "#881798",
-      "red": "#C21A23",
-      "selectionBackground": "#FFFFFF",
-      "white": "#CCCCCC",
-      "yellow": "#A2734C"
-    },
     {
       "background": "#1E1E1E",
       "black": "#000000",
