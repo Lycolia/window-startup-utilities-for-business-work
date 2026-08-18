@@ -1,4 +1,4 @@
-# Windows Office Working Utilities
+# Windows Working Utilities
 
 Windows + WSLを使った日々の業務環境を、手早く立ち上げるための個人用ユーティリティ集。
 
