@@ -28,3 +28,4 @@ if errorlevel 1 (
 start code
 
 endlocal
+exit
